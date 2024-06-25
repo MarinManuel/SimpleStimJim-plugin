@@ -4,6 +4,10 @@
 This file is part of the Open Ephys GUI
 Copyright (C) 2022 Open Ephys
 
+Simple StimJim plugin by:
+Marin Manuel <marin.manuel@neurobio.org>
+University of Rhode Island
+
 ------------------------------------------------------------------
 
 This program is free software: you can redistribute it and/or modify
@@ -20,12 +24,22 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ProcessorPluginEditor.h"
+#pragma once
 
-ProcessorPluginEditor::ProcessorPluginEditor(GenericProcessor* parentNode) 
-    : GenericEditor(parentNode)
+#include <EditorHeaders.h>
+
+class SimpleStimJimPluginEditor : public GenericEditor
 {
+public:
 
-    desiredWidth = 150;
+	/** Constructor */
+	SimpleStimJimPluginEditor(GenericProcessor* parentNode);
 
-}
+	/** Destructor */
+	~SimpleStimJimPluginEditor() { }
+
+private:
+
+	/** Generates an assertion if this class leaks */
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SimpleStimJimPluginEditor);
+};

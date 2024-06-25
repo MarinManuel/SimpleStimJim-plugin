@@ -4,6 +4,10 @@
 This file is part of the Open Ephys GUI
 Copyright (C) 2022 Open Ephys
 
+Simple StimJim plugin by:
+Marin Manuel <marin.manuel@neurobio.org>
+University of Rhode Island
+
 ------------------------------------------------------------------
 
 This program is free software: you can redistribute it and/or modify
@@ -20,20 +24,19 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PROCESSORPLUGIN_H_DEFINED
-#define PROCESSORPLUGIN_H_DEFINED
+#pragma once
 
 #include <ProcessorHeaders.h>
 
 
-class ProcessorPlugin : public GenericProcessor
+class SimpleStimJimPlugin : public GenericProcessor
 {
 public:
 	/** The class constructor, used to initialize any members. */
-	ProcessorPlugin();
+	SimpleStimJimPlugin();
 
 	/** The class destructor, used to deallocate memory */
-	~ProcessorPlugin();
+	~SimpleStimJimPlugin();
 
 	/** If the processor has a custom editor, this method must be defined to instantiate it. */
 	AudioProcessorEditor* createEditor() override;
@@ -72,5 +75,3 @@ public:
 	void loadCustomParametersFromXml(XmlElement* parentElement) override;
 
 };
-
-#endif

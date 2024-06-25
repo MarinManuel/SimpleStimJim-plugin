@@ -4,6 +4,10 @@
 This file is part of the Open Ephys GUI
 Copyright (C) 2022 Open Ephys
 
+Simple StimJim plugin by:
+Marin Manuel <marin.manuel@neurobio.org>
+University of Rhode Island
+
 ------------------------------------------------------------------
 
 This program is free software: you can redistribute it and/or modify
@@ -20,39 +24,38 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ProcessorPlugin.h"
+#include "SimpleStimJimPlugin.h"
+#include "SimpleStimJimPluginEditor.h"
 
-#include "ProcessorPluginEditor.h"
 
-
-ProcessorPlugin::ProcessorPlugin()
-    : GenericProcessor("Plugin Name")
+SimpleStimJimPlugin::SimpleStimJimPlugin()
+    : GenericProcessor("Simple StimJim")
 {
 
 }
 
 
-ProcessorPlugin::~ProcessorPlugin()
+SimpleStimJimPlugin::~SimpleStimJimPlugin()
 {
 
 }
 
 
-AudioProcessorEditor* ProcessorPlugin::createEditor()
+AudioProcessorEditor* SimpleStimJimPlugin::createEditor()
 {
-    editor = std::make_unique<ProcessorPluginEditor>(this);
+    editor = std::make_unique<SimpleStimJimPluginEditor>(this);
     return editor.get();
 }
 
 
-void ProcessorPlugin::updateSettings()
+void SimpleStimJimPlugin::updateSettings()
 {
 
 
 }
 
 
-void ProcessorPlugin::process(AudioBuffer<float>& buffer)
+void SimpleStimJimPlugin::process(AudioBuffer<float>& buffer)
 {
 
     checkForEvents(true);
@@ -60,31 +63,31 @@ void ProcessorPlugin::process(AudioBuffer<float>& buffer)
 }
 
 
-void ProcessorPlugin::handleTTLEvent(TTLEventPtr event)
+void SimpleStimJimPlugin::handleTTLEvent(TTLEventPtr event)
 {
 
 }
 
 
-void ProcessorPlugin::handleSpike(SpikePtr spike)
+void SimpleStimJimPlugin::handleSpike(SpikePtr spike)
 {
 
 }
 
 
-void ProcessorPlugin::handleBroadcastMessage(String message)
+void SimpleStimJimPlugin::handleBroadcastMessage(String message)
 {
 
 }
 
 
-void ProcessorPlugin::saveCustomParametersToXml(XmlElement* parentElement)
+void SimpleStimJimPlugin::saveCustomParametersToXml(XmlElement* parentElement)
 {
 
 }
 
 
-void ProcessorPlugin::loadCustomParametersFromXml(XmlElement* parentElement)
+void SimpleStimJimPlugin::loadCustomParametersFromXml(XmlElement* parentElement)
 {
 
 }
